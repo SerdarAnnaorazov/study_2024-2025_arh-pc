@@ -1,8 +1,8 @@
-; lab04.asm
+; lab4.asm
 SECTION .data ; Начало секции данных
-        lab04: DB 'Serdar Annaorazov',10  
+        lab4: DB 'Annaorazov Serdar',10
         
-        lab04Len: EQU $-lab04 ; Длина строки lab04
+        lab4Len: EQU $-lab4 ; Длина строки lab4
 
 SECTION .text ; Начало секции кода
         GLOBAL _start
@@ -10,8 +10,8 @@ SECTION .text ; Начало секции кода
 _start: ; Точка входа в программу
         mov eax,4  ; Системный вызов для записи (sys_write)
         mov ebx,1  ; Описатель файла '1' - стандартный вывод
-        mov ecx,lab04  ; Адрес строки lab04 в ecx
-        mov edx,lab04Len  ; Размер строки lab04
+        mov ecx,lab4  ; Адрес строки lab4 в ecx
+        mov edx,lab4Len  ; Размер строки lab
         int 80h  ; Вызов ядра
 
         mov eax,1  ; Системный вызов для входа (sys_exit)
